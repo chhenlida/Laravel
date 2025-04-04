@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('customer_id');
             $table->timestamps();
-            $table->softDeletes();
+           
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
