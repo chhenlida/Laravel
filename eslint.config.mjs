@@ -7,6 +7,18 @@ import tseslint from 'typescript-eslint';
 export default tseslint.config(
   {
     ignores: ['eslint.config.mjs'],
+     files: ['**/*.ts'],
+    rules: {
+      '@typescript-eslint/ban-types': [
+        'error',
+        {
+          types: {
+            error: false, // 👈 disables warning on `error` types
+          },
+          extendDefaults: true,
+        },
+      ],
+    },
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
